@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div clas="container">
+    <div class="jumbotron text-center">
+      <h1>Mars Facts</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Data</a></p>
+    </div>
+      
+    <!--news-->
+    <div class="row">
+      <div class="col-sm-12" >
+        <h2>Latest Mars News</h2>
+        <h3><p>{{ mars.news_title }}</p></h3>
+        <p>{{ mars.news_teaser }}</p>
+      </div>
+    </div>
+    <!-- feature image -->
+    <div class="row">
+      <div class="col-sm-8">
+        <h3>Featured Mars Image</h3>
+        <img src= {{ mars.feature_pic }} class="img-responsive" alt="Image">
+      </div>
+      <!-- maybe create a panel for the weather-->
+      <div class="col-sm-4">
+        <h3 class="bold">Mars Weather</h3>
+        <p>{{ mars.weather }}</p>
+      </div>
+      <!-- facts table -->
+      <div class="col-sm-4">
+        <h3>Mars Facts</h3>
+        {{ mars.mars_facts | safe}}
+      </div>
+    </div>
+    <!-- hemisphere images -->
+    <div class="row">
+      <h3 class="bold text-center">Mars Hemispheres</h3>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="#" class="thumbnail">
+          <img src={{mars.hem_pics.0.link}} alt="Image">
+        </a>
+        <h4 class="bold">{{ mars.hem_pics.0.title }}</h4>
+      </div>
+      <div class="col-sm-6">
+        <a href="#" class="thumbnail">
+          <img src={{mars.hem_pics.1.link}} alt="Image">
+        </a>
+        <h4 class="bold">{{ mars.hem_pics.1.title }}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="#" class="thumbnail">
+          <img src={{mars.hem_pics.2.link}} alt="Image">
+        </a>
+        <h4 class="bold">{{ mars.hem_pics.2.title }}</h4>
+      </div>
+      <div class="col-sm-6">
+        <a href="#" class="thumbnail">
+          <img src={{mars.hem_pics.3.link}} alt="Image">
+        </a>
+        <h4 class="bold">{{ mars.hem_pics.3.title }}</h4>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
